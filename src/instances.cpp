@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
-#include "../include/instances.h"
+#include "libplaymc/instances.h"
 
 
-// Function for creating a new instance
+void Instance::start(){
+    std::cout << "Starting instance: " << this->config.name << std::endl;
+    // then some java wrapper code here idk lol
+};

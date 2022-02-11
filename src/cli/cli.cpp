@@ -1,10 +1,15 @@
 #include <string>
 #include <iostream>
-#include <instances.h>
-int main()
-{
-    // run MojangAuth::authenticate()
-    MojangAuth mojangAuth;
-    mojangAuth.authenticate();
-    
+#include <libplaymc/instances.h>
+
+int main(){
+    InstanceConfig inst;
+    inst.name = "among us";
+    inst.path = "test";
+    inst.version = "test";
+    Instance instance;
+    instance.loadConfig(inst);
+    instance.start();
+    return 0;
+
 }
