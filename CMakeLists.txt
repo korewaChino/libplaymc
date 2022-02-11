@@ -9,6 +9,8 @@ add_library(${PROJECT_NAME} SHARED)
 target_sources(${PROJECT_NAME} PRIVATE 
     src/auth.cpp
     src/instances.cpp
+    src/java.cpp
+    src/jsoncpp.cpp
 )
 
 add_executable(plmc src/cli/cli.cpp)
@@ -41,3 +43,6 @@ install(
 
 install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/include/${PROJECT_NAME}/
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME})
+
+# require libjsoncpp
+find_package(jsoncpp REQUIRED)

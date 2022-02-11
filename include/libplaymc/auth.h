@@ -6,6 +6,8 @@ class Authentication {
     public:
         std::string authType;
         std::string token;
+        std::string refreshToken;
+        std::string username;
         void printToken(){
             std::cout << token << std::endl;
         }
@@ -15,16 +17,16 @@ class Authentication {
 
 
 
-//Mojang Authentication
-//Logs in to the Mojang authentication server, then creates an instance of the Authentication class with the returned token.
-Authentication MojangAuth(std::string username, std::string password) {
-    // logs in to mojang servers here
-    // we will return a test token for now
-    std::string token = "mojang_token";
-    Authentication auth;
-    auth.token = token;
-    return auth;
-};
+// Mojang Authentication
+// Logs in to the Mojang authentication server, then creates an instance of the Authentication class with the returned token.
+Authentication MojangAuth(std::string username, std::string password);
 
-//Microsoft Authentication
-//Logs in to the Microsoft authentication server, then creates an instance of the Authentication class with the returned token.
+// Microsoft Authentication
+// Logs in to the Microsoft authentication server, then creates an instance of the Authentication class with the returned token.
+Authentication MSAuth(std::string username, std::string password);
+
+
+// Offline Authentication
+// Creates an offline (cracked) session, yarr!
+Authentication OfflineAuth(std::string username);
+

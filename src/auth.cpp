@@ -1,20 +1,31 @@
 #include <string>
 #include <iostream>
-#include "libplaymc/auth.h"
+#include <libplaymc/auth.h>
 
-
+std::string authServer = "https://authserver.mojang.com";
 
 
 // functions that will create instances of the Authentication class
 
+Authentication MojangAuth(std::string username, std::string password){
+    Authentication auth;
+    auth.authType = "mojang";
+    auth.token = "mojang token";
+    auth.username = username;
+    return auth;
+};
+
+Authentication MSAuth(){
+    Authentication auth;
+    //TODO: implement this
+    return auth;
+};
 
 
-// Mojang Authentication
-// Logs in to the Mojang authentication server, then creates an instance of the Authentication class with the returned token.
-Authentication* authenticate(std::string username, std::string password) {
-    // logs in to mojang servers here
-    // we will return a test token for now
-    std::string token = "testtoken";
-    Authentication* auth = new Authentication;
+Authentication OfflineAuth(std::string username){
+    Authentication auth;
+    auth.authType = "offline";
+    auth.username = username;
+    auth.token = "0";
     return auth;
 };
