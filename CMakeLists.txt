@@ -27,9 +27,6 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE -D_EXPORT)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES DEBUG_POSTFIX ".debug")
 
-# specify the target to install (calculator library defined above)
-# set the export name <name>-config (does not need to match target name)
-# also specify where the .dylib/.so/.dll+.lib file should be installed
 install(
     TARGETS ${PROJECT_NAME}
     EXPORT ${PROJECT_NAME}-config
